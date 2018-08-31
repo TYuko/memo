@@ -1,0 +1,41 @@
+練習問題
+これまで出てきた変数と演算子を用いて、より複雑な数式を入力してみましょう。
+
+Q. ¥3,950,000を年利率2.3％の単利で8か月間借り入れた場合の利息はいくらか（円未満切り捨て）
+scala> val debpt = 3950000
+debpt: Int = 3950000
+
+scala> val rate = 0.023
+rate: Double = 0.023
+
+scala> val term = 8 / 12
+term: Int = 0
+
+scala> val term: Double = 8 / 12
+term: Double = 0.0
+
+scala> val term = 8.0 / 12.0
+term: Double = 0.6666666666666666
+
+scala> val res: Int = debpt * rate * term
+<console>:10: error: type mismatch;
+ found   : Double
+ required: Int
+       val res: Int = debpt * rate * term
+                                   ^
+
+scala> val res = debpt * rate * term
+res: Double = 60566.666666666664
+
+Q. 定価¥1,980,000の商品を値引きして販売したところ、原価1.6％にあたる¥26,400の損失となった。割引額は定価の何パーセントであったか
+scala> val price = 1980000
+price: Int = 1980000
+
+scala> val cost = 26400.0 / 0.016
+cost: Double = 1650000.0
+
+scala> val discount = price - cost * (1 - 0.016)
+discount: Double = 356400.0
+
+scala> val disRate = discount / price
+disRate: Double = 0.18
